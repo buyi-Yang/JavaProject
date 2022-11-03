@@ -1,5 +1,6 @@
 package code.Test;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -13,40 +14,35 @@ import java.util.Random;
 public class Test23 {
     public static void main(String[] args) {
         Random r = new Random();
+
         //数组动态初始化
-        int[] arr = new int[10];
-        arr[0] = r.nextInt(100) + 1;
-        arr[1] = r.nextInt(100) + 1;
-        arr[2] = r.nextInt(100) + 1;
-        arr[3] = r.nextInt(100) + 1;
-        arr[4] = r.nextInt(100) + 1;
-        arr[5] = r.nextInt(100) + 1;
-        arr[6] = r.nextInt(100) + 1;
-        arr[7] = r.nextInt(100) + 1;
-        arr[8] = r.nextInt(100) + 1;
-        arr[9] = r.nextInt(100) + 1;
-        //随机生成的随机数
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-        }
+        final int[] arr = new int[10];
+
+        // 所有数的和
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum = sum + arr[i];
-        }
-        System.out.println("所有数据和：" + sum);
-        //平均数
-        int average = sum / 10;
-        System.out.println("平均数：" + average);
+
         //定义计数变量
-        int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (average > arr[i]) {
-                count++;
-            }
+        int lessAverageCount = 0;
 
+        // 生成随机数
+        for (int i = 0; i < arr.length; i ++) {
+            arr[i] = r.nextInt(100) + 1;
+            System.out.println(arr[i]);
+            sum += arr[i];
         }
-        System.out.println("共有" + count + "个数比平均数小");
 
+        System.out.println("所有数据和：" + sum);
+
+        //平均数
+        final double average = (double) sum / arr.length;
+        System.out.println("平均数：" + average);
+
+        // 统计小于平均数的数字个数
+        for (int i : arr) {
+            if (i < average) lessAverageCount++;
+        }
+
+        System.out.println("共有" + lessAverageCount + "个数比平均数小");
     }
 }
 
