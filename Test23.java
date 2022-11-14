@@ -1,8 +1,6 @@
 package code.Test;
 
-import java.util.Arrays;
 import java.util.Random;
-
 /**
  * 遍历数组求和
  * 需求：生成10个1~100之间的随机数存入数组

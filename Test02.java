@@ -7,10 +7,10 @@ public class Test02 {
     public static void main(String[] args) {
         int num = 5;
         for (int i =5 ; i <= num && i >0; i--){
-            System.out.println(i);
-            System.out.println("冲！");
+            System.out.print(i);
+            System.out.print("冲！");
         }
-        System.out.println("小白冲神");
+        System.out.println("廖文山冲神");
 
 
 

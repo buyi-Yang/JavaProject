@@ -9,9 +9,9 @@ public class Test21 {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            //i表示数组中的每一个索引，arr[i]表示数组中每一个元素
-            if (arr[i] % 3 == 0) {
+        for (int j : arr) {
+            //i表示数组中的每一个索引，arr[i]表示数组中每一个元素，arr.length 表示数组中有多少个元素
+            if (j % 3 == 0) {
                 count++;
             }
         }
